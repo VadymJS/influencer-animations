@@ -1,0 +1,57 @@
+.list {
+    position: absolute;
+    top: 50px;
+    left: 24px;
+    max-width: 260px;
+    width: 100%;
+    padding: 16px;
+    background: $color-white;
+    border: 1px solid $color-black;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 2;
+
+    @include media(md) {
+        top: 70px;
+        left: 64px;
+        max-width: 400px;
+    }
+
+    @include media(lg) {
+        position: unset;
+        max-width: unset;
+        width: unset;
+        justify-content: unset;
+        flex-direction: row;
+        border: unset;
+        padding: 0;
+    }
+
+    &-item {
+        text-transform: uppercase;
+        color: $color-dark;
+        transition: color .3s $ease-out;
+
+        a {
+            display: flex;
+            padding: 20px;
+
+            @include media(lg) {
+                padding: 10px;
+            }
+
+            @include media(xl) {
+                padding: 20px;
+            }
+        }
+
+        &:hover {
+            color: lighten($color-dark, .5)
+        }
+    }
+}
+

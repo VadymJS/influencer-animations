@@ -1,0 +1,105 @@
+.btn {
+    display: inline-block;
+    line-height: 20px;
+    vertical-align: middle;
+    padding: 20px 32px;
+    cursor: pointer;
+    transition: .3s $ease-out;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    color: $color-white;
+    background-color: $color-black;
+    font-family: $font-base;
+    font-size: 14px;
+    user-select: none;
+    border: none;
+    border-radius: 16px;
+
+    &:hover {
+        background-color: rgba($color-black, .8);
+    }
+
+    .svg-icon {
+        transition: .3s $ease-out;
+    }
+
+    &-link {
+        background-color: unset;
+        border: none;
+        color: $color-dark;
+
+        &:hover {
+            background-color: $color-grey;
+        }
+    }
+
+    &-rounded {
+        border-radius: 50%;
+    }
+
+    &-success {
+        background-color: $color-success;
+        color: $color-black;
+
+        &:hover {
+            background-color: rgba($color-success, .8);
+        }
+    }
+
+    &-icon {
+        padding-left: 12px;
+        padding-right: 13px;
+
+        .svg-icon {
+            margin-right: 0;
+            opacity: .7;
+            transition: opacity .3s $ease-out;
+        }
+
+        &:hover .svg-icon {
+            opacity: 1;
+        }
+    }
+
+    &-header-burger {
+        width: 43px;
+        height: 43px;
+        padding: 0;
+        position: relative;
+        justify-content: center;
+
+        @include media(md) {
+            width: 60px;
+            height: 60px;
+        }
+
+        &:after, &:before {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 20px;
+            z-index: 1;
+            background-color: $color-white;
+            position: absolute;
+            top: 40%;
+            transition: .3s $ease-out;
+        }
+
+        &:after {
+            top: 60%;
+        }
+
+        &.is-active {
+            &:after {
+                transform: rotate(45deg);
+                top: 50%;
+            }
+
+            &:before {
+                transform: rotate(-45deg);
+                top: 50%;
+            }
+        }
+    }
+}

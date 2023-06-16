@@ -1,0 +1,31 @@
+.to-top, .to-bottom, .to-left, .to-right {
+    transition: 1s $ease-out;
+    transition-property: opacity, transform;
+    opacity: 0;
+}
+
+.to-top {
+    transform: translateY(100%);
+}
+
+.to-bottom {
+    transform: translateY(-100%);
+}
+
+.to-left {
+    transform: translateX(100%);
+}
+
+.to-right {
+    transform: translateX(-100%);
+}
+
+
+
+.has-animation {
+
+    .to-top, .to-bottom, .to-left, .to-right {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
